@@ -75,12 +75,19 @@ class DoublyLL:
 
 	def addFirst(self, data):
 		self._sentinel.next = DLLNode(self._sentinel, data, self._sentinel.next)
+
 	def addLast(self, data):
+		return 
 	def removeFirst(self, data):
+		return
 	def removeLast(self, data):
+		return
 	def get(self, index):
+		return
 	def search(self, data):
+		return
 	def __iter__(self):
+		return
 		
 
 
