@@ -1,18 +1,25 @@
 class SLLNode:
 	def __init__(self, data=0, next=None):
-		self.val = val
+		self.data = data
 		self.next = next
+	
+	def __repr__(self):
+		return 'Node(data={})'.format(self.data)
 
 class DLLNode:
 	def __init__(self, prev=None, data=0, next=None):
 		self.prev = prev
-		self.val = val
+		self.data = data
 		self.next = next
+	
+	def __repr__(self):
+		return 'Node(data={})'.format(self.data)
 
 class SinglyLL:
 	def __init__(self):
 		self._sentinel = SLLNode()
 		self.length = 0
+		self.head = self._sentinel.next
 
 	def addFirst(self, data):
 		self._sentinel.next = SLLNode(data, self._sentinel.next)
@@ -29,7 +36,7 @@ class SinglyLL:
 		if self.length == 0:
 			raise Exception("the list is empty")
 
-		self._sentinel.next = self_sentinel.next.next
+		self._sentinel.next = self._sentinel.next.next
 		self.length -= 1
 
 	def removeLast(self):

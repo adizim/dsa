@@ -1,4 +1,4 @@
-class Tree:
+class NTree:
 	def __init__(self, data=0, children=[]):
 		self.data = data
 		self.children = children
@@ -15,6 +15,8 @@ class BinaryTree:
 	def leaf(self):
 		return self.left is None and self.right is None
 
-class Trie
-class Graph
-		
+class Trie:
+	def __init__(self, data=0, children=[], flag=False):
+		self.data = data
+		self.flag = flag
+		self.children = children
