@@ -19,7 +19,6 @@ class SinglyLL:
 	def __init__(self):
 		self._sentinel = SLLNode()
 		self.length = 0
-		self.head = self._sentinel.next
 
 	def addFirst(self, data):
 		self._sentinel.next = SLLNode(data, self._sentinel.next)
@@ -48,6 +47,11 @@ class SinglyLL:
 			p = p.next
 		p.next = p.next.next
 		self.length -= 1
+	
+	def head(self):
+		if self.length == 0:
+			raise Exception("there is no head node")
+		return self._sentinel.next
 
 	def get(self, index):
 		if index >= self.length:
@@ -56,7 +60,16 @@ class SinglyLL:
 		p = self._sentinel.next
 		for _ in range(index):
 			p = p.next
-		return p.val
+		return p.data
+
+	def get_node(self, index):
+		if index >= self.length:
+			raise Exception("there is no item at the index you are getting")
+
+		p = self._sentinel.next
+		for _ in range(index):
+			p = p.next
+		return p
 
 	def search(self, data):
 		if self.length == 0:
@@ -64,7 +77,7 @@ class SinglyLL:
 
 		p = self._sentinel.next
 		while p is not None:
-			if p.val == data:
+			if p.data == data:
 				return p
 			p = p.next
 		return p

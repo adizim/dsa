@@ -51,9 +51,15 @@ def bubblesort(lst):
                 lst[i], lst[i+1] = lst[i+1], lst[i]
     return lst
 
+# Sort integers or strings of average digit/char size k by grouping each
+# digit/char from least to most signifant
+# O(nk) time, O(n + k) space 
 def radixsort(lst):
     return lst
 
+# Sort integers in a certain range length k by counting the number of integers
+# for each integer in range
+# O(n + k) time, O(k) space
 def countingsort(lst):
     return lst
 
